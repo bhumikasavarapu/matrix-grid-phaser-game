@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Grid Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script>
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="sidebar">
+            <div class="logo-section">
+                <div class="logo-icon">💠</div>
+                <h1>MatrixGrid</h1>
+                <p class="subtitle">PHASER 2D ADVANCED GAME ENGINE</p>
+            </div>
+
+            <div class="difficulty-modes">
+                <button class="mode-btn active" data-size="3">EASY (3X3)</button>
+                <button class="mode-btn" data-size="5">MEDIUM (5X5)</button>
+                <button class="mode-btn" data-size="7">HARD (7X7)</button>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat-box">
+                    <span class="stat-label">REMAINING ALLOWED MOVES</span>
+                    <span class="stat-value" id="moves-count">10</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">CURRENT MATCH STREAK</span>
+                    <span class="stat-value" id="streak-count">1</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">BEST STREAK (HIGH SCORE)</span>
+                    <span class="stat-value" id="best-streak">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">LIVE ACTION SPEED RUN</span>
+                    <span class="stat-value" id="timer-display">00:00</span>
+                </div>
+            </div>
+
+            <button id="reset-btn">RESET MATRIX GRID</button>
+        </div>
+
+        <div class="main-content">
+            <div id="phaser-game-canvas"></div>
+            
+            <div id="game-overlay" class="hidden">
+                <div class="overlay-content">
+                    <h2 id="overlay-title">SUCCESS!</h2>
+                    <p id="overlay-message">Grid Matched Perfectly!</p>
+                    <button id="overlay-action-btn">PLAY AGAIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions-container">
+        <h3>💡 How to Play</h3>
+        <ul>
+            <li>Your objective is to match the left grid to look exactly like the <strong>"TARGET CONFIG SPEC"</strong> grid on the right.</li>
+            <li>Click on the blocks in the left grid to toggle and change their colors.</li>
+            <li>Match the target grid before you run out of <strong>Allowed Moves</strong> to keep your streak going!</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
